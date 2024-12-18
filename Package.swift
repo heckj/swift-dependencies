@@ -32,6 +32,7 @@ let package = Package(
     .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "1.4.0"),
     //.package(url: "https://github.com/swiftlang/swift-syntax", "509.0.0"..<"601.0.0-prerelease"),
     .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "601.0.0-latest"),
+    .package(url: "https://github.com/swiftlang/swift-testing/", branch: "jgrynspan/162-redesign-value-capture"),
   ],
   targets: [
     .target(
@@ -64,6 +65,7 @@ let package = Package(
         "Dependencies",
         "DependenciesTestSupport",
         .product(name: "IssueReportingTestSupport", package: "xctest-dynamic-overlay"),
+        .product(name: "Testing", package: "swift-testing"),
       ],
       exclude: ["Dependencies.xctestplan"]
     ),
